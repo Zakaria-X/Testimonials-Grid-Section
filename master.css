@@ -1,0 +1,162 @@
+﻿:root {
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-500: hsl(263, 55%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 4.5rem 1.5rem;
+  background: var(--grey-100);
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  color: var(--white);
+}
+
+h2,
+h3,
+p,
+blockquote {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.testimonials-grid {
+  width: min(100%, 1110px);
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.card {
+  border-radius: 0.625rem;
+  padding: 1.75rem 2rem 2rem;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.125rem;
+}
+
+.profile img {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+
+.profile h2 {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.profile p {
+  margin-top: 0.25rem;
+  font-size: 0.6875rem;
+  opacity: 0.5;
+}
+
+.card h3 {
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.card blockquote {
+  margin-top: 1rem;
+  line-height: 1.38;
+  opacity: 0.7;
+}
+
+.card-daniel {
+  position: relative;
+  background: var(--purple-500) url("./images/bg-pattern-quotation.svg") no-repeat top right 1.5rem;
+}
+
+.card-daniel .profile img,
+.card-patrick .profile img {
+  border-color: var(--purple-300);
+}
+
+.card-jonathan {
+  background: var(--grey-500);
+}
+
+.card-jeanette,
+.card-kira {
+  background: var(--white);
+  color: var(--grey-500);
+}
+
+.card-patrick {
+  background: var(--dark-blue);
+}
+
+@media (min-width: 48rem) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-daniel,
+  .card-patrick,
+  .card-kira {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 70rem) {
+  body {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card-daniel {
+    grid-column: 1 / span 2;
+  }
+
+  .card-jonathan {
+    grid-column: 3;
+  }
+
+  .card-kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .card-jeanette {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .card-patrick {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+}
